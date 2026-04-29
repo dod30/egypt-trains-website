@@ -1,6 +1,6 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { LanguageProvider, useLanguage } from "@/hooks/useLanguage";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/sections/Footer";
 import { TrainSearchPanel } from "@/components/sections/SearchTrains";
@@ -201,10 +201,6 @@ const SearchInner = () => {
   );
 };
 
-const Search = () => (
-  <LanguageProvider>
-    <SearchInner />
-  </LanguageProvider>
-);
+const Search = () => <SearchInner />;
 
 export default Search;

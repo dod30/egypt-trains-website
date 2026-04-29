@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { LanguageProvider, useLanguage } from "@/hooks/useLanguage";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/sections/Footer";
 import { useMeta } from "@/hooks/useMeta";
@@ -14,7 +14,7 @@ interface PageLayoutProps {
   children: ReactNode;
 }
 
-const PageMeta = ({ title, description, canonicalPath }: Omit<PageLayoutProps, "children">) => {
+export const PageLayout = ({ title, description, canonicalPath, children }: PageLayoutProps) => {
   const { lang } = useLanguage();
   const isAr = lang === "ar";
   useMeta({
@@ -27,12 +27,7 @@ const PageMeta = ({ title, description, canonicalPath }: Omit<PageLayoutProps, "
     canonicalPath,
     locale: isAr ? "ar_EG" : "en_US",
   });
-  return null;
-};
-
-export const PageLayout = ({ title, description, canonicalPath, children }: PageLayoutProps) => (
-  <LanguageProvider>
-    <PageMeta title={title} description={description} canonicalPath={canonicalPath} />
+  return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       <main className="flex-1 container py-16 max-w-3xl">
@@ -41,5 +36,5 @@ export const PageLayout = ({ title, description, canonicalPath, children }: Page
       </main>
       <Footer />
     </div>
-  </LanguageProvider>
-);
+  );
+};

@@ -1,4 +1,4 @@
-import { LanguageProvider, useLanguage } from "@/hooks/useLanguage";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
@@ -11,7 +11,7 @@ import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import { useMeta } from "@/hooks/useMeta";
 
-const HomeMeta = () => {
+const Index = () => {
   const { lang } = useLanguage();
   const isAr = lang === "ar";
   useMeta({
@@ -25,28 +25,22 @@ const HomeMeta = () => {
     canonicalPath: "/",
     locale: isAr ? "ar_EG" : "en_US",
   });
-  return null;
-};
 
-const Index = () => {
   return (
-    <LanguageProvider>
-      <HomeMeta />
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <Hero />
-          <Stats />
-          <SearchTrains />
-          <Features />
-          <HowItWorks />
-          <Screens />
-          <Benefits />
-          <CTA />
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Stats />
+        <SearchTrains />
+        <Features />
+        <HowItWorks />
+        <Screens />
+        <Benefits />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
