@@ -7,11 +7,11 @@ export const Header = () => {
   const { lang, t, toggle } = useLanguage();
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border">
-      <div className="container flex items-center justify-between h-16">
-        <a href="#top" className="flex items-center gap-2">
-          <img src={logo} alt="Egypt Trains" className="w-8 h-8" />
-          <span className="font-extrabold tracking-tight">{lang === "ar" ? "قطارات مصر" : "Egypt Trains"}</span>
-        </a>
+      <div className="container flex items-center justify-between h-20">
+        <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-smooth">
+          <img src={logo} alt="Egypt Trains" className="w-12 h-12" />
+          <span className="font-extrabold tracking-tight text-lg">{lang === "ar" ? "قطارات مصر" : "Egypt Trains"}</span>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           <Link to="/search" className="text-muted-foreground hover:text-foreground transition-smooth">{lang === "ar" ? "ابحث" : "Search"}</Link>
           <a href="/#features" className="text-muted-foreground hover:text-foreground transition-smooth">{t.nav.features}</a>
