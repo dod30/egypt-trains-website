@@ -1,0 +1,16 @@
+{
+  "name": "مواعيد قطارات مصر — Egypt Trains",
+  "short_name": "قطارات مصر",
+  "description": "مواعيد قطارات السكة الحديد المصرية وأسعار التذاكر",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#B00020",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
