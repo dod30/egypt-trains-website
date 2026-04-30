@@ -1,5 +1,5 @@
 import { useLanguage } from "@/hooks/useLanguage";
-import { Smartphone, Apple } from "lucide-react";
+import { AppStoreBadge, GooglePlayBadge } from "../StoreBadges";
 
 export const CTA = () => {
   const { t } = useLanguage();
@@ -12,19 +12,8 @@ export const CTA = () => {
             <h2 className="text-3xl md:text-5xl font-black mb-3 text-balance max-w-2xl mx-auto">{t.cta.title}</h2>
             <p className="text-lg opacity-90 mb-8">{t.cta.subtitle}</p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="#" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-background text-foreground font-bold hover:scale-[1.03] transition-smooth">
-                <Smartphone size={18} />
-                {t.hero.android}
-              </a>
-              <a
-                href="https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/15 text-primary-foreground font-bold border border-white/30 hover:bg-white/25 transition-smooth"
-              >
-                <Apple size={18} />
-                {t.hero.ios}
-              </a>
+              <AppStoreBadge variant="dark" />
+              <GooglePlayBadge variant="dark" />
             </div>
           </div>
         </div>

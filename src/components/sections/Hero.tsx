@@ -1,6 +1,6 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import { PhoneFrame } from "../PhoneFrame";
-import { Smartphone, Apple } from "lucide-react";
+import { AppStoreBadge, GooglePlayBadge } from "../StoreBadges";
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -17,19 +17,8 @@ export const Hero = () => {
           </h1>
           <p className="text-lg text-muted-foreground max-w-lg mx-auto md:mx-0">{t.hero.subtitle}</p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-            <a href="#download" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-hero text-primary-foreground font-bold shadow-glow hover:scale-[1.03] transition-smooth">
-              <Smartphone size={18} />
-              {t.hero.android}
-            </a>
-            <a
-              href="https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-secondary text-foreground font-bold hover:bg-secondary/70 transition-smooth"
-            >
-              <Apple size={18} />
-              {t.hero.ios}
-            </a>
+            <AppStoreBadge variant="light" />
+            <GooglePlayBadge variant="light" />
           </div>
         </div>
         <div className="flex justify-center animate-float">
