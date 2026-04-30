@@ -1,8 +1,13 @@
 import { useLanguage } from "@/hooks/useLanguage";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718";
-// TODO: replace with real Play Store URL once published
-const PLAY_STORE_URL = "#";
+
+// While the Play Store version is in review, we ship the signed APK directly
+// from a GitHub Release. Once Play Store approves, replace this with the real
+// Play Store URL and flip APK_FALLBACK to false.
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.novaeg.egypttrains";
+const APK_DIRECT_URL = "https://github.com/dod30/egypt-trains-website/releases/download/v1.0.0/app-release.apk";
+const APK_FALLBACK = true;
 
 const AppleLogo = ({ size = 28 }: { size?: number }) => (
   <svg viewBox="0 0 384 512" width={size} height={size} fill="currentColor" aria-hidden="true">
@@ -77,23 +82,26 @@ export const GooglePlayBadge = ({ variant = "light" }: BadgeProps) => {
   const { lang } = useLanguage();
   const isAr = lang === "ar";
   const dark = variant === "dark";
+  const useApk = APK_FALLBACK;
   return (
     <a
-      href={PLAY_STORE_URL}
+      href={useApk ? APK_DIRECT_URL : PLAY_STORE_URL}
+      target={useApk ? "_blank" : undefined}
+      rel={useApk ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center gap-3 px-5 py-3 rounded-2xl border transition-smooth hover:scale-[1.03] ${
         dark
           ? "bg-white/15 text-white border-white/30 hover:bg-white/25"
           : "bg-black text-white border-black hover:opacity-90"
       }`}
-      aria-label="Get it on Google Play"
+      aria-label={useApk ? "Download Android APK" : "Get it on Google Play"}
     >
       <GooglePlayLogo size={26} />
       <span className="text-start leading-tight">
         <span className="block text-[10px] opacity-80">
-          {isAr ? "حمّل من" : "Get it on"}
+          {useApk ? (isAr ? "تحميل مباشر" : "Direct download") : isAr ? "حمّل من" : "Get it on"}
         </span>
         <span className="block text-lg font-semibold tracking-tight">
-          Google Play
+          {useApk ? (isAr ? "Android APK" : "Android APK") : "Google Play"}
         </span>
       </span>
     </a>
