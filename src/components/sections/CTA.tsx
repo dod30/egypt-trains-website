@@ -16,10 +16,15 @@ export const CTA = () => {
                 <Smartphone size={18} />
                 {t.hero.android}
               </a>
-              <button className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/15 text-primary-foreground font-bold border border-white/30" disabled>
+              <a
+                href="https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/15 text-primary-foreground font-bold border border-white/30 hover:bg-white/25 transition-smooth"
+              >
                 <Apple size={18} />
                 {t.hero.ios}
-              </button>
+              </a>
             </div>
           </div>
         </div>

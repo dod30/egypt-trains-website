@@ -8,7 +8,7 @@ export const translations = {
       title: "Know your train time in seconds.",
       subtitle: "The whole Egyptian National Railways network in your pocket — schedules, classes, official fares and one-tap booking, in Arabic and English.",
       android: "Get it on Android",
-      ios: "Coming soon on iOS",
+      ios: "Get on App Store",
     },
     stats: {
       trains: "trains",
@@ -64,7 +64,7 @@ export const translations = {
       title: "اعرف ميعاد قطارك في ثواني.",
       subtitle: "كل شبكة السكة الحديد المصرية في جيبك — مواعيد، درجات، أسعار رسمية وحجز بضغطة واحدة، عربي وإنجليزي.",
       android: "حمّل من Android",
-      ios: "قريبًا على iOS",
+      ios: "حمّل من App Store",
     },
     stats: {
       trains: "قطار",

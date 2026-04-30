@@ -21,10 +21,15 @@ export const Hero = () => {
               <Smartphone size={18} />
               {t.hero.android}
             </a>
-            <button className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-secondary text-foreground font-bold hover:bg-secondary/70 transition-smooth" disabled>
+            <a
+              href="https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-secondary text-foreground font-bold hover:bg-secondary/70 transition-smooth"
+            >
               <Apple size={18} />
               {t.hero.ios}
-            </button>
+            </a>
           </div>
         </div>
         <div className="flex justify-center animate-float">
