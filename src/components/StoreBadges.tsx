@@ -2,12 +2,11 @@ import { useLanguage } from "@/hooks/useLanguage";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/egypt-trains-قطارات-مصر/id6764452718";
 
-// While the Play Store version is in review, we ship the signed APK directly
-// from a GitHub Release. Once Play Store approves, replace this with the real
-// Play Store URL and flip APK_FALLBACK to false.
+// The app is now live on the Play Store, so the Android badge links there
+// directly. The signed-APK GitHub Release remains as a fallback only.
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.novaeg.egypttrains";
 const APK_DIRECT_URL = "https://github.com/dod30/egypt-trains-website/releases/download/v1.0.0/app-release.apk";
-const APK_FALLBACK = true;
+const APK_FALLBACK = false;
 
 const AppleLogo = ({ size = 28 }: { size?: number }) => (
   <svg viewBox="0 0 384 512" width={size} height={size} fill="currentColor" aria-hidden="true">
