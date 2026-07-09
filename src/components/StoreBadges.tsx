@@ -85,8 +85,8 @@ export const GooglePlayBadge = ({ variant = "light" }: BadgeProps) => {
   return (
     <a
       href={useApk ? APK_DIRECT_URL : PLAY_STORE_URL}
-      target={useApk ? "_blank" : undefined}
-      rel={useApk ? "noopener noreferrer" : undefined}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`inline-flex items-center gap-3 px-5 py-3 rounded-2xl border transition-smooth hover:scale-[1.03] ${
         dark
           ? "bg-white/15 text-white border-white/30 hover:bg-white/25"
